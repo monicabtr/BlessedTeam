@@ -10,6 +10,7 @@
 		DD9CCE512A24EB61001C3D3F /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */; };
 		DD9CCE532A24FF64001C3D3F /* PreparationFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */; };
 		DD9CCE552A25096F001C3D3F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE542A25096F001C3D3F /* MainView.swift */; };
+		DDF30E3F2A31C6BE004A10D0 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF30E3E2A31C6BE004A10D0 /* WaveformView.swift */; };
 		DDFFDFEA2A20F6C200EFAE58 /* BlessedTeamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFFDFE92A20F6C200EFAE58 /* BlessedTeamApp.swift */; };
 		DDFFDFEC2A20F6C200EFAE58 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFFDFEB2A20F6C200EFAE58 /* OnboardingView.swift */; };
 		DDFFDFEE2A20F6C300EFAE58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFFDFED2A20F6C300EFAE58 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationFinishView.swift; sourceTree = "<group>"; };
 		DD9CCE542A25096F001C3D3F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DDF30E3E2A31C6BE004A10D0 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		DDFFDFE62A20F6C200EFAE58 /* BlessedTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlessedTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFFDFE92A20F6C200EFAE58 /* BlessedTeamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlessedTeamApp.swift; sourceTree = "<group>"; };
 		DDFFDFEB2A20F6C200EFAE58 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */,
 				DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */,
 				DD9CCE542A25096F001C3D3F /* MainView.swift */,
+				DDF30E3E2A31C6BE004A10D0 /* WaveformView.swift */,
 				DDFFDFED2A20F6C300EFAE58 /* Assets.xcassets */,
 				DDFFDFEF2A20F6C300EFAE58 /* BlessedTeam.entitlements */,
 				DDFFDFF02A20F6C300EFAE58 /* Preview Content */,
@@ -161,6 +164,7 @@
 				DDFFDFEC2A20F6C200EFAE58 /* OnboardingView.swift in Sources */,
 				DDFFDFEA2A20F6C200EFAE58 /* BlessedTeamApp.swift in Sources */,
 				DD9CCE512A24EB61001C3D3F /* ParticipantView.swift in Sources */,
+				DDF30E3F2A31C6BE004A10D0 /* WaveformView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

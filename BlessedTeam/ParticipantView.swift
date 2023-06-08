@@ -54,39 +54,36 @@ struct ParticipantView: View {
                             // Misalnya, Anda dapat menyimpan nama peserta ke dalam koleksi
                             print("Participant name:", participantName)
                         }
-                    ),
-                    content: {
-                                TextField("Type here", text: $participantName)
-                            }
+                    )
+                    
                 )
             }
+            .navigationTitle("Understanding User Preferences and Expectations towards the Application")
+            .navigationBarItems(trailing: Button(action: {
+                editData()
+            }) {
+                Text("Edit")
+                    .onTapGesture {
+                        isMainViewactive = true
+                    }
+                    .navigationDestination(isPresented: $isMainViewactive) {
+                        MainView()
+                    }
+            })
             
             
         }
-        .navigationTitle("Understanding User Preferences and Expectations towards the Application")
-        .navigationBarItems(trailing: Button(action: {
-            editData()
-        }) {
-            Text("Edit")
-                .onTapGesture {
-                    isMainViewactive = true
-                }
-                .navigationDestination(isPresented: $isMainViewactive) {
-                    MainView()
-                }
-        })
-        
-        
     }
-    
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    func editData() {
-        isMainViewactive = true
-    }
-    
-    //    func addInputParticipants() {
-    //        inputParticipants.append("")
-    //    }
+        
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        func editData() {
+            isMainViewactive = true
+        }
+        
+        //    func addInputParticipants() {
+        //        inputParticipants.append("")
+        //    }
+        
     
 }
 

@@ -27,7 +27,8 @@ struct HomeView: View {
                 Rectangle()
                     .shadow(color: .gray, radius: 5, x: 10, y: 5)
                     .frame(width: 308, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("hijau"))
+                    .opacity(0.1)
                     .cornerRadius(20, antialiased: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .overlay(
                         VStack {
@@ -36,11 +37,13 @@ struct HomeView: View {
                         }
                         .foregroundColor(.green)
                         .font(.system(size: 25))
+                        .bold()
                     )
                 Rectangle()
                     .shadow(color: .gray, radius: 5, x: 10, y: 5)
                     .frame(width: 308, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("biru"))
+                    .opacity(0.1)
                     .cornerRadius(20, antialiased: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .overlay(
                         VStack {
@@ -49,11 +52,13 @@ struct HomeView: View {
                         }
                         .foregroundColor(.blue)
                         .font(.system(size: 25))
+                        .bold()
                     )
                 Rectangle()
                     .shadow(color: .gray, radius: 5, x: 10, y: 5)
                     .frame(width: 308, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("jingga"))
+                    .opacity(0.1)
                     .cornerRadius(20, antialiased: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .overlay(
                         VStack {
@@ -62,6 +67,7 @@ struct HomeView: View {
                         }
                         .foregroundColor(.orange)
                         .font(.system(size: 25))
+                        .bold()
                     )
             }
             .offset(x: 0, y:-250)

@@ -12,7 +12,9 @@ struct MainView: View {
         ZStack {
             GeometryReader { geometry in
                 Text("Eren Monica")
+                    .bold()
                     .font(.largeTitle)
+                    .foregroundColor(.blue)
                     .position(x: geometry.size.width/2 - 400, y: geometry.size.height/2 - 350)
 
                 HStack {
@@ -20,7 +22,7 @@ struct MainView: View {
                     Text("0/6")
                 }
                 .bold()
-                .position(x: geometry.size.width/2 - 400, y: geometry.size.height/2 - 200)
+                .position(x: geometry.size.width/2 - 400, y: geometry.size.height/2 - 300)
                 
                 List {
                     Text("Can you describe any pain points or frustrations you experience while using the app?")
@@ -32,7 +34,7 @@ struct MainView: View {
                 }
                 .scrollContentBackground(.hidden)
                 .frame(width: geometry.size.width * 0.5, height: 400)
-                .position(x: geometry.size.width/2 - 200, y: geometry.size.height/2 + 100)
+                .position(x: geometry.size.width/2 - 200, y: geometry.size.height/2 - 100)
 
                 
                 

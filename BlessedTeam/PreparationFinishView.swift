@@ -37,8 +37,9 @@ struct PreparationFinishView: View {
     }
 }
 
-//struct PreparationFinishView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PreparationFinishView()
-//    }
-//}
+struct PreparationFinishView_Previews: PreviewProvider {
+    static var previews: some View {
+        PreparationFinishView()
+            .previewInterfaceOrientation(.landscapeRight)
+    }
+}

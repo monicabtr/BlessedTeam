@@ -87,8 +87,9 @@ struct ParticipantView: View {
     
 }
 
-//struct ParticipantView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ParticipantView()
-//    }
-//}
+struct ParticipantView_Previews: PreviewProvider {
+    static var previews: some View {
+        ParticipantView()
+            .previewInterfaceOrientation(.landscapeRight)
+    }
+}

@@ -99,8 +99,9 @@ struct PreparationView: View {
     
 }
 
-//struct PreparationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PreparationView()
-//    }
-//}
+struct PreparationView_Previews: PreviewProvider {
+    static var previews: some View {
+        PreparationView()
+            .previewInterfaceOrientation(.landscapeRight)
+    }
+}

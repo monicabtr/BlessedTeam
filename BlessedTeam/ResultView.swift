@@ -17,16 +17,33 @@ struct ResultView: View {
     @StateObject var audioRecorder = AudioRecorder()
     
     var body: some View {
-        
-        Text("Ini Result View")
-        List(audioPlayer.recordings, id: \.self) { recordingURL in
-            Button(action: {
-                self.audioPlayer.playAudio(url: recordingURL)
-            }) {
-                Text(recordingURL.lastPathComponent)
+        HStack {
+            Text("Tap to go to the time you want")
+                .font(.system(size: 20, weight: .bold))
+            List(timestamps, id: \.self) { timestamp in
+                Text(timestamp)
+                    .font(.subheadline)
+            }
+
+            
+            
+            VStack{
+                Text("00:50:00")
+                    .font(.system(size: 20, weight: .bold))
+                Text("BAR REKAMAN")
+                    .font(.system(size: 20, weight: .bold))
+                Text("00:03:01")
+                    .font(.system(size: 20, weight: .bold))
+                List(audioPlayer.recordings, id: \.self) { recordingURL in
+                    Button(action: {
+                        self.audioPlayer.playAudio(url: recordingURL)
+                    }) {
+                        Text(recordingURL.lastPathComponent)
+                    }
+                }
+                
             }
         }
-        
     }
 }
 

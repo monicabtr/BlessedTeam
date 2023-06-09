@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209968E02A32BDFD00C2CF6A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968DF2A32BDFD00C2CF6A /* ResultView.swift */; };
+		209968E32A32C9C700C2CF6A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E22A32C9C700C2CF6A /* AudioRecorder.swift */; };
+		209968E52A32CA2800C2CF6A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E42A32CA2800C2CF6A /* AudioPlayer.swift */; };
+		209968E82A32CB4600C2CF6A /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E72A32CB4600C2CF6A /* TimeStamp.swift */; };
 		DD9CCE512A24EB61001C3D3F /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */; };
 		DD9CCE532A24FF64001C3D3F /* PreparationFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */; };
 		DD9CCE552A25096F001C3D3F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE542A25096F001C3D3F /* MainView.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		209968DF2A32BDFD00C2CF6A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		209968E22A32C9C700C2CF6A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		209968E42A32CA2800C2CF6A /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		209968E72A32CB4600C2CF6A /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
 		DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationFinishView.swift; sourceTree = "<group>"; };
 		DD9CCE542A25096F001C3D3F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -45,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		209968E12A32C93100C2CF6A /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				209968E22A32C9C700C2CF6A /* AudioRecorder.swift */,
+				209968E42A32CA2800C2CF6A /* AudioPlayer.swift */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		209968E62A32CB1800C2CF6A /* TimeStamp */ = {
+			isa = PBXGroup;
+			children = (
+				209968E72A32CB4600C2CF6A /* TimeStamp.swift */,
+			);
+			path = TimeStamp;
+			sourceTree = "<group>";
+		};
 		DDFFDFDD2A20F6C200EFAE58 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +89,8 @@
 		DDFFDFE82A20F6C200EFAE58 /* BlessedTeam */ = {
 			isa = PBXGroup;
 			children = (
+				209968E62A32CB1800C2CF6A /* TimeStamp */,
+				209968E12A32C93100C2CF6A /* AVFoundation */,
 				DDFFDFE92A20F6C200EFAE58 /* BlessedTeamApp.swift */,
 				DDFFDFEB2A20F6C200EFAE58 /* OnboardingView.swift */,
 				DDFFDFFA2A2102C200EFAE58 /* HomeView.swift */,
@@ -71,6 +98,7 @@
 				DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */,
 				DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */,
 				DD9CCE542A25096F001C3D3F /* MainView.swift */,
+				209968DF2A32BDFD00C2CF6A /* ResultView.swift */,
 				DDF30E3E2A31C6BE004A10D0 /* WaveformView.swift */,
 				DDFFDFED2A20F6C300EFAE58 /* Assets.xcassets */,
 				DDFFDFEF2A20F6C300EFAE58 /* BlessedTeam.entitlements */,
@@ -158,8 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDFFDFFD2A2103B200EFAE58 /* PreparationView.swift in Sources */,
+				209968E82A32CB4600C2CF6A /* TimeStamp.swift in Sources */,
 				DD9CCE552A25096F001C3D3F /* MainView.swift in Sources */,
+				209968E52A32CA2800C2CF6A /* AudioPlayer.swift in Sources */,
+				209968E02A32BDFD00C2CF6A /* ResultView.swift in Sources */,
 				DD9CCE532A24FF64001C3D3F /* PreparationFinishView.swift in Sources */,
+				209968E32A32C9C700C2CF6A /* AudioRecorder.swift in Sources */,
 				DDFFDFFB2A2102C200EFAE58 /* HomeView.swift in Sources */,
 				DDFFDFEC2A20F6C200EFAE58 /* OnboardingView.swift in Sources */,
 				DDFFDFEA2A20F6C200EFAE58 /* BlessedTeamApp.swift in Sources */,

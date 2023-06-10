@@ -9,10 +9,11 @@ import SwiftUI
 import AVFoundation
 
 struct ResultView: View {
+    @Binding var timestamps: [String]
+    
     @State private var timer: Timer?
     @State private var elapsedTime: TimeInterval = 0
     @State private var isTimerRunning = false
-    @State private var timestamps: [String] = []
     @StateObject var audioPlayer = AudioPlayer()
     @StateObject var audioRecorder = AudioRecorder()
     
@@ -49,7 +50,7 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView()
+        ResultView(timestamps: .constant(["00:00:00 Test"]))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

@@ -19,11 +19,14 @@ struct ResultView: View {
     
     var body: some View {
         HStack {
-            Text("Tap to go to the time you want")
-                .font(.system(size: 20, weight: .bold))
-            List(timestamps, id: \.self) { timestamp in
-                Text(timestamp)
-                    .font(.subheadline)
+            VStack {
+                Text("Tap to go to the time you want")
+                    .font(.system(size: 20, weight: .bold))
+                List(timestamps, id: \.self) { timestamp in
+                        Text(timestamp)
+                            .font(.subheadline)
+            }
+            
             }
 
             
@@ -50,7 +53,7 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(timestamps: .constant(["00:00:00 Test"]))
+        ResultView(timestamps: .constant(["00:00:00 "]))
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

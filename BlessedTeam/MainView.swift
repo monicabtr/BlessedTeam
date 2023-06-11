@@ -4,7 +4,7 @@ import SwiftUI
 import AVFoundation
 
 struct MainView: View {
-    
+    @State private var showAlert = false
     @State private var showResultView = false
     @State private var timer: Timer?
     @State private var elapsedTime: TimeInterval = 0
@@ -22,6 +22,14 @@ struct MainView: View {
         
         //DI SINI CODINGAN UNTUK UI (TAMPILANNYA)
         NavigationStack {
+            NavigationLink(
+                destination: ResultView(timestamps: $timestamps),
+                    isActive: $showResultView,
+                    label: {
+                        EmptyView()
+                    })
+                    .hidden()
+            
             ZStack {
                 GeometryReader { geometry in
                     VStack {
@@ -44,10 +52,28 @@ struct MainView: View {
                                 HStack{
                                     
                                     // Action pindah ke view Result
-                                    NavigationLink {
-                                        ResultView(timestamps: $timestamps)
+                                    //                                    NavigationLink {
+                                    //                                        ResultView(timestamps: $timestamps)
+                                    //
+                                    //                                    } label: {
+                                    //                                        Text("Finish")
+                                    //                                            .fontWeight(.bold)
+                                    //                                            .foregroundColor(.white)
+                                    //                                            .padding()
+                                    //                                            .frame(width: 120, height: 30)
+                                    //                                            .background(Color.red)
+                                    //                                            .cornerRadius(25)
+                                    //                                    }.onTapGesture {
+                                    //                                        finishTimer()
+                                    //                                        audioRecorder.stopRecording()
+                                    //                                    }
+                                    
+                                    
+                                    Button(action: {
+                                        finishTimer()
+                                        audioRecorder.stopRecording()
                                         
-                                    } label: {
+                                    }) {
                                         Text("Finish")
                                             .fontWeight(.bold)
                                             .foregroundColor(.white)
@@ -55,26 +81,8 @@ struct MainView: View {
                                             .frame(width: 120, height: 30)
                                             .background(Color.red)
                                             .cornerRadius(25)
-                                    }.onTapGesture {
-                                        finishTimer()
-                                        audioRecorder.stopRecording()
                                     }
-
-                                    
-//                                    Button(action: {
-//                                        finishTimer()
-//                                        audioRecorder.stopRecording()
-//                                        NavigationLink(destination: ResultView(timestamps: $timestamps))
-//                                    }) {
-//                                        Text("Finish")
-//                                            .fontWeight(.bold)
-//                                            .foregroundColor(.white)
-//                                            .padding()
-//                                            .frame(width: 120, height: 30)
-//                                            .background(Color.red)
-//                                            .cornerRadius(25)
-//                                    }
-//                                    .padding()
+                                    .padding()
                                     
                                     Button(action: {
                                         audioRecorder.startRecording()
@@ -95,14 +103,17 @@ struct MainView: View {
                             
                         }
                         HStack {
-                            Text("Tap to time stamp")
-                                .bold()
+                            HStack {
+                                Text("Tap to time stamp")
+                                    .bold()
+                                
+                            }
                             
                             
-                            Spacer()
-                            Text("Timestamp")
-                                .bold()
-                            
+                            HStack{
+                                Text("Timestamp")
+                                    .bold()
+                            }
                         }
                         
                         HStack{
@@ -377,312 +388,20 @@ struct MainView: View {
                                 
                             }
                         }
-                        
-                        
-                        
-                        
-                        
                     }
-                    
-                    
-                    
-                    
-                    //                HStack {
-                    //                    Text("Tap to time stamp")
-                    //                    Text("0/6")
-                    //                }
-                    //                .bold()
-                    //                .position(x: geometry.size.width/2 - 400, y: geometry.size.height/2 - 200)
-                    
-                    //                List {
-                    //                    Text("Can you describe any pain points or frustrations you experience while using the app?")
-                    //                    Text("How frequently do you use this app, and in what contexts or situations?")
-                    //                    Text("Are there any specific improvements or changes you would like to see in the app?")
-                    //                    Text("Have you encountered any difficulties in understanding the app's navigation or menu structure?")
-                    //                    Text("How do you feel about the visual design and aesthetics of the app?")
-                    //                    Text("How do you feel about the visual design and aesthetics of the app?")
-                    //                }
-                    //                .scrollContentBackground(.hidden)
-                    //                .frame(width: geometry.size.width * 0.5, height: 400)
-                    //                .position(x: geometry.size.width/2 - 200, y: geometry.size.height/2 + 100)
-                    
-                    
-                    
-                    //            VStack {
-                    //                Text("Waveform View")
-                    //                    .font(.title)
-                    ////                WaveformView(audioURL: /* URL rekaman suara */)
-                    //                    .frame(height: 200)
-                    //            }
-                    
-                    
-                    //                Text("Timestamp")
-                    //                //nanti ada list timestamp
-                    //                    .bold()
-                    //                    .position(x: geometry.size.width/2 + 250, y: geometry.size.height/2 - 150)
-                    
-                    
-                    
-                    //                Text("Stamp Button")
-                    //                    .bold()
-                    //                    .position(x: geometry.size.width/2 + 250, y: geometry.size.height/2 - 50)
-                    //
-                    //                HStack {
-                    //                    Button(action: {
-                    //                        addTimestamp()
-                    //
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("probing")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("PROBING")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                    Button(action: {
-                    //                        insightTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("insight")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("INSIGHT")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //                }
-                    //                .position(x: geometry.size.width/2 + 350, y: geometry.size.height/2)
-                    //
-                    //                HStack {
-                    //                    Button(action: {
-                    //                        needTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("need")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("NEED")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                    Button(action: {
-                    //                        hopeTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("hope")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("HOPE")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //                }
-                    //                .position(x: geometry.size.width/2 + 350, y: geometry.size.height/2 + 50)
-                    //
-                    //                HStack {
-                    //                    Button(action: {
-                    //                        motivationTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("motivation")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("MOTIVATION")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                    Button(action: {
-                    //                        disappointedTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("disappointed")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("DISAPPOINTED")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //                }
-                    //                .position(x: geometry.size.width/2 + 350, y: geometry.size.height/2 + 100)
-                    //
-                    //                HStack {
-                    //                    Button(action: {
-                    //                        happyTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("happy")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("HAPPY")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                    Button(action: {
-                    //                        satisfiedTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("satisfied")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("SATISFIED")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                }
-                    //                .position(x: geometry.size.width/2 + 350, y: geometry.size.height/2 + 150)
-                    //
-                    //                HStack {
-                    //                    Button(action: {
-                    //                        confusedTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("confused")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("CONFUSED")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //
-                    //                    Button(action: {
-                    //                        frustrationTimestamp()
-                    //                        // Tindakan yang akan dilakukan saat tombol ditekan
-                    //                        print("Tombol ditekan")
-                    //                    }) {
-                    //                        HStack {
-                    //                            Image("frustration")
-                    //                                .resizable()
-                    //                                .frame(width: 32, height: 20)
-                    //                            Text("FRUSTRATION")
-                    //                                .foregroundColor(.black)
-                    //                                .padding()
-                    //                                .font(.system(size:12))
-                    //                        }
-                    //                        .frame(width: 145, height: 30)
-                    //                        .background(
-                    //                            Rectangle()
-                    //                                .fill(Color.white)
-                    //                                .cornerRadius(8)
-                    //                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                    //                        )
-                    //                    }
-                    //                }
-                    //                .position(x: geometry.size.width/2 + 350, y: geometry.size.height/2 + 200)
-                    
-                    
-                    
-                    
                 }
             }
         }
         
     }
     //TEMPAT FUNCTION YAA
+//    private func finishTimer() {
+//            // ...
+//            showResultView = true // Menampilkan ResultView
+//        }
+    
+                    
+                    
     private func toggleTimer() {
         isTimerRunning.toggle()
         
@@ -701,6 +420,9 @@ struct MainView: View {
         timer = nil
         elapsedTime = 0
         isTimerRunning = false
+        showResultView = true
+        
+            
     }
     
     private func addTimestamp() {
@@ -724,7 +446,7 @@ struct MainView: View {
     private func hopeTimestamp() {
         let timestamp = timeFormatted(elapsedTime)
         
-        timestamps.append(timestamp + "  hope")
+        timestamps.append(timestamp + "  Hope")
     }
     
     private func motivationTimestamp() {

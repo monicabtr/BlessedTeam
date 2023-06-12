@@ -11,6 +11,7 @@
 		209968E32A32C9C700C2CF6A /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E22A32C9C700C2CF6A /* AudioRecorder.swift */; };
 		209968E52A32CA2800C2CF6A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E42A32CA2800C2CF6A /* AudioPlayer.swift */; };
 		209968E82A32CB4600C2CF6A /* TimeStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209968E72A32CB4600C2CF6A /* TimeStamp.swift */; };
+		209969222A35F6B400C2CF6A /* HasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209969212A35F6B400C2CF6A /* HasilView.swift */; };
 		DD9CCE512A24EB61001C3D3F /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */; };
 		DD9CCE532A24FF64001C3D3F /* PreparationFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */; };
 		DD9CCE552A25096F001C3D3F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CCE542A25096F001C3D3F /* MainView.swift */; };
@@ -28,6 +29,7 @@
 		209968E22A32C9C700C2CF6A /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		209968E42A32CA2800C2CF6A /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		209968E72A32CB4600C2CF6A /* TimeStamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStamp.swift; sourceTree = "<group>"; };
+		209969212A35F6B400C2CF6A /* HasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasilView.swift; sourceTree = "<group>"; };
 		DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
 		DD9CCE522A24FF64001C3D3F /* PreparationFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationFinishView.swift; sourceTree = "<group>"; };
 		DD9CCE542A25096F001C3D3F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				DD9CCE502A24EB61001C3D3F /* ParticipantView.swift */,
 				DD9CCE542A25096F001C3D3F /* MainView.swift */,
 				209968DF2A32BDFD00C2CF6A /* ResultView.swift */,
+				209969212A35F6B400C2CF6A /* HasilView.swift */,
 				DDF30E3E2A31C6BE004A10D0 /* WaveformView.swift */,
 				DDFFDFED2A20F6C300EFAE58 /* Assets.xcassets */,
 				DDFFDFEF2A20F6C300EFAE58 /* BlessedTeam.entitlements */,
@@ -189,6 +192,7 @@
 				209968E82A32CB4600C2CF6A /* TimeStamp.swift in Sources */,
 				DD9CCE552A25096F001C3D3F /* MainView.swift in Sources */,
 				209968E52A32CA2800C2CF6A /* AudioPlayer.swift in Sources */,
+				209969222A35F6B400C2CF6A /* HasilView.swift in Sources */,
 				209968E02A32BDFD00C2CF6A /* ResultView.swift in Sources */,
 				DD9CCE532A24FF64001C3D3F /* PreparationFinishView.swift in Sources */,
 				209968E32A32C9C700C2CF6A /* AudioRecorder.swift in Sources */,
@@ -343,10 +347,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Monica.BlessedTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -381,10 +387,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Monica.BlessedTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

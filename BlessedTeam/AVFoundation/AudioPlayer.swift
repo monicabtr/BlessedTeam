@@ -41,6 +41,7 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             print("Playback failed")
         }
     }
+    //bikin function play audio baru yang parameternya url dan waktu
     
     func pause() {
         audioPlayer.pause()
@@ -55,4 +56,9 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         isPlaying = false
     }
+    
+    
+    
+
+
 }

@@ -20,10 +20,12 @@ struct MainView: View {
     
     var body: some View {
         
+        
+        
         //DI SINI CODINGAN UNTUK UI (TAMPILANNYA)
         NavigationStack {
             NavigationLink(
-                destination: ResultView(timestamps: $timestamps),
+                destination: HasilView(timestamps: $timestamps),
                     isActive: $showResultView,
                     label: {
                         EmptyView()

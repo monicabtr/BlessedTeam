@@ -57,7 +57,7 @@ struct ResultView: View {
                 ////////////////////////////////////
                 ForEach(timestamps, id: \.self) { timestamp in
                     Button(action: {
-                        // Action when the button is tapped
+                        
                     }) {
                         Text(timestamp)
                             .font(.subheadline)
